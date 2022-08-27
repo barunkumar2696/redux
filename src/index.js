@@ -4,8 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit';
-import { rootReducer } from './rootReducer';
 import { Provider } from 'react-redux';
+import {combineReducers} from 'redux'
+import { productReducer, userReducer } from './reducer';
+
+let rootReducer = combineReducers({
+    user: userReducer,
+    product: productReducer
+})
 
 let store = configureStore({reducer : rootReducer})
 
